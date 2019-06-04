@@ -1,0 +1,31 @@
+{
+  "name": "lim009-fe-md-links",
+  "version": "1.0.0",
+  "description": "## Preámbulo",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeriaBE/LIM009-fe-md-links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeriaBE/LIM009-fe-md-links/issues"
+  },
+  "homepage": "https://github.com/ValeriaBE/LIM009-fe-md-links#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {},
+  "bin": {
+    "md-links": "./main.js"
+  }
+}
