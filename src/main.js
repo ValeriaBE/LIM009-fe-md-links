@@ -1,52 +1,31 @@
 #!/usr/bin/env node
+// import {isAbsolute,isRelative} from './path-controller.js'
+// import { readDir} from './directory-controller.js';
 
-// var fs = require('fs')
-import {fs} from 'fs';
-var path = require('path')
-
-
-// export const isAbsolute = (str) => {
-//     return path.isAbsolute(str);
-// } 
-
-// export const isRelative = (str) => {
-//     return path.resolve(str);
-// }
-
-// export const isFile = (str) => {
-// const content = fs.statSync(str);
-//     return content.isFile();
-// }
-
-// export const isMd = (str) => {
-//     if(path.extname(str)==='.md'){
-//         return path.extname(str);
-//     } else{
-//         const error = 'no es md'
-//         return error;
+// const  mdLinks = (route) => {
+//     if(isAbsolute(route)){
+//         return readDir(route)
+//     }else{
+//         isRelative(route)
+//         mdLinks(route)
 //     }
 // }
+// console.log(mdLinks(process.argv[2]))
 
-const readDir = (files) => {
-    let arrayFiles = [];
-    fs.readdir(files, (err, data) => {
-        if (err) 
-        return console.error(err);
-        data.forEach(file => {
-            const fullPath = path.join(files, file)
-            if(isDir(fullPath)){
-                arrayFiles = arrayFiles.concat(readDir(fullPath))
-            }else{
-                arrayFiles.push(fullPath)
-                console.log(arrayFiles)
-            }
-        })
-    })
-    
-}
-console.log(readDir(process.argv[2]))
+import fs from 'fs'
+import myMarked from 'marked';
 
-const isDir = (str) => {
-    const content = fs.statSync(str);
-    return (content.isDirectory());
+const mdLinkExtractor = (file) =>{
+    const markdown = fs.readFileSync(file).toString();
+    var renderer = new myMarked.Renderer();
+    let link = [];
+    renderer.link = function (href, title,text) {
+        link.push({href, text})
+        
+      };
+      myMarked(markdown,{renderer:renderer})
+        return link;
 }
+
+
+console.log(mdLinkExtractor('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
