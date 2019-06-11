@@ -7,7 +7,6 @@ export const isFile = (str) => {
     const content = fs.statSync(str);
     return content.isFile();
 }
-
 export const readDir = (root) => {
     let arr = [];
     if (isFile(root)) {
