@@ -1,8 +1,8 @@
-import path from'path';
+import path from 'path';
 
 export const isAbsolute = (str) => {
     return path.isAbsolute(str);
-} 
+}
 
 export const isRelative = (str) => {
     return path.resolve(str);

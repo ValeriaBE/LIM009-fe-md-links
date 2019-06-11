@@ -31,9 +31,10 @@
     "markdown-link-check": "^3.7.3",
     "markdown-link-extractor": "^1.2.1",
     "marked": "^0.6.2",
+    "node-fetch": "^2.6.0",
     "remove-markdown": "^0.3.0"
   },
   "bin": {
-    "md-links": "./main.js"
+    "md-links": "./lib/main.js"
   }
 }
