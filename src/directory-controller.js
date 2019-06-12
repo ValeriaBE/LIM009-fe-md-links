@@ -2,6 +2,7 @@ import fs from "fs"
 import path from 'path';
 import { isMd } from './path-controller.js'
 import { mdLinkExtractor } from "./links-controller.js";
+import { reccorerArr } from "./validate.js";
 
 export const isFile = (str) => {
     const content = fs.statSync(str);

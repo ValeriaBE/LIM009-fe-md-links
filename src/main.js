@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import { isAbsolute, isRelative } from './path-controller.js'
 import { readDir } from './directory-controller.js';
+import { reccorerArr } from './validate.js';
 
 const mainFunction = (route) => {
     if (isAbsolute(route)) {
-        return readDir(route)
+        reccorerArr(readDir(route))
+        .then((res)=>{console.log(res)})
     } else {
-        isRelative(route)
-        mdLinks(route)
+        mainFunction(isRelative(route))
     }
 }
-console.log(mainFunction(process.argv[2]))
+mainFunction(process.argv[2])

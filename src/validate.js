@@ -11,5 +11,5 @@ export const reccorerArr = (arr) =>{
     })
     return Promise.all(arrPromises)
    }
-reccorerArr(mdLinkExtractor(process.argv[2]))
-.then((res)=>{console.log(res)})
+// reccorerArr(readDir(process.argv[2]))
+// .then((res)=>{console.log(res)})
