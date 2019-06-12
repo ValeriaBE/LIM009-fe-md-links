@@ -3,12 +3,16 @@ import { isAbsolute, isRelative } from './path-controller.js'
 import { readDir } from './directory-controller.js';
 import { reccorerArr } from './validate.js';
 
-const mainFunction = (route) => {
+const mainFunction = (route, options) => {
     if (isAbsolute(route)) {
-        reccorerArr(readDir(route))
-        .then((res)=>{console.log(res)})
+        if(options === 'true'){
+            reccorerArr(readDir(route))
+            .then((res)=>{console.log(res)})
+        }else{
+            console.log(readDir(route))
+        }
     } else {
         mainFunction(isRelative(route))
     }
 }
-mainFunction(process.argv[2])
+mainFunction(process.argv[2], process.argv[3])
