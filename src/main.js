@@ -12,7 +12,7 @@ const mainFunction = (route, options) => {
             console.log(readDir(route))
         }
     } else {
-        mainFunction(isRelative(route))
+        mainFunction(isRelative(route), options)
     }
 }
 mainFunction(process.argv[2], process.argv[3])
