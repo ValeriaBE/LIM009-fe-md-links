@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export const reccorerArr = (arr) =>{
+export const validateArr = (arr) =>{
    const arrPromises = arr.map(obj => {
         return fetch(obj.href)
         .then(res => {
