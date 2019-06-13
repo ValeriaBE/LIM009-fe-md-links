@@ -4,9 +4,10 @@ const path =process.argv[2];
 let option = process.argv[3];
 let options = {};
 
+const validatingOptions = () => {
     if(option === '--validate'){
         options.validate = true;
-        mdLinks(path, options)
+        mdLinks(path, option)
         .then((result)=>{
             console.log(result)
         })
@@ -16,5 +17,8 @@ let options = {};
             console.log(result)
     })
 }
+}
+
+validatingOptions()
 
 
