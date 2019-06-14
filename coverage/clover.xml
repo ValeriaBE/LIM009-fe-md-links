@@ -1,51 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1560382066184" clover="3.2.0">
-  <project timestamp="1560382066185" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11" elements="48" coveredelements="48" complexity="0" loc="33" ncloc="33" packages="1" files="4" classes="4"/>
+<coverage generated="1560554584844" clover="3.2.0">
+  <project timestamp="1560554584844" name="All files">
+    <metrics statements="62" coveredstatements="60" conditionals="14" coveredconditionals="14" methods="21" coveredmethods="19" elements="97" coveredelements="93" complexity="0" loc="62" ncloc="62" packages="1" files="6" classes="6"/>
     <file name="directory-controller.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/directory-controller.js">
       <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="6" count="1" type="stmt"/>
-      <line num="7" count="12" type="stmt"/>
-      <line num="8" count="12" type="stmt"/>
+      <line num="7" count="44" type="stmt"/>
+      <line num="8" count="44" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
-      <line num="11" count="10" type="stmt"/>
-      <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="13" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="14" count="5" type="stmt"/>
-      <line num="17" count="4" type="stmt"/>
-      <line num="18" count="7" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="22" count="10" type="stmt"/>
+      <line num="11" count="42" type="stmt"/>
+      <line num="12" count="42" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="22" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="17" type="stmt"/>
+      <line num="17" count="20" type="stmt"/>
+      <line num="18" count="35" type="stmt"/>
+      <line num="19" count="35" type="stmt"/>
+      <line num="22" count="42" type="stmt"/>
     </file>
     <file name="links-controller.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/links-controller.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="4" count="1" type="stmt"/>
-      <line num="5" count="6" type="stmt"/>
+      <line num="5" count="18" type="stmt"/>
+      <line num="6" count="18" type="stmt"/>
+      <line num="7" count="18" type="stmt"/>
+      <line num="8" count="18" type="stmt"/>
+      <line num="9" count="43" type="stmt"/>
+      <line num="11" count="18" type="stmt"/>
+      <line num="12" count="18" type="stmt"/>
+    </file>
+    <file name="mdLinks.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/mdLinks.js">
+      <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="2"/>
+      <line num="5" count="1" type="stmt"/>
       <line num="6" count="6" type="stmt"/>
-      <line num="7" count="6" type="stmt"/>
-      <line num="8" count="6" type="stmt"/>
-      <line num="9" count="14" type="stmt"/>
-      <line num="11" count="6" type="stmt"/>
-      <line num="12" count="6" type="stmt"/>
+      <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
     </file>
     <file name="path-controller.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/path-controller.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="2" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
-      <line num="12" count="8" type="stmt"/>
+      <line num="12" count="24" type="stmt"/>
+    </file>
+    <file name="stats.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/stats.js">
+      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="4" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="30" count="6" type="stmt"/>
+      <line num="32" count="3" type="stmt"/>
+      <line num="33" count="3" type="stmt"/>
     </file>
     <file name="validate.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/validate.js">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="5" count="17" type="stmt"/>
+      <line num="7" count="17" type="cond" truecount="4" falsecount="0"/>
+      <line num="8" count="14" type="stmt"/>
+      <line num="9" count="14" type="stmt"/>
+      <line num="10" count="14" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
     </file>
   </project>
 </coverage>

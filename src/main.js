@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import { mdLinks } from "./cli.js";
+import { mdLinks } from "./mdLinks.js";
 import { linkStats } from "./stats.js";
 
 const path =process.argv[2];
 let option = process.argv[3];
 let validate = process.argv[4];
-let options = {};
+let options = {validate:false};
 
 const validatingOptions = () => {
     if(option){
@@ -27,7 +27,7 @@ const validatingOptions = () => {
             `Total: ${linkStats(res, false).Total} Unique: ${linkStats(res, false).Unique}`)})
             }
     }else{
-        mdLinks(path)
+        mdLinks(path, false)
         .then((result)=>{
             result.forEach(element =>{
                 console.log(`${element.file} ${element.href} ${element.text}`)
