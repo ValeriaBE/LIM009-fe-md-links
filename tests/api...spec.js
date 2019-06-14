@@ -172,7 +172,7 @@ describe('validateArr', () => {
 });
 describe('mdLinks', () => {
   it('Deberia retornar un array con href, text, file, ok, status', () => {
-    return mdLinks('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo', '--validate')
+    return mdLinks('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo', true)
       .then(data => {
         expect(data).toEqual([
           {
@@ -270,7 +270,7 @@ describe('mdLinks', () => {
       });
   })
   it('Deberia retornar un array con href, text, file, ok, status', () => {
-    return mdLinks('ejemplo')
+    return mdLinks('ejemplo', false)
       .then(data => {
         expect(data).toEqual([
           {
@@ -312,7 +312,7 @@ describe('mdLinks', () => {
       });
   })
   it('Deberia retornar un array con href, text, file, ok, status', () => {
-    return mdLinks('ejemplo','--validate')
+    return mdLinks('ejemplo',true)
       .then(data => {
         expect(data).toEqual([
           {

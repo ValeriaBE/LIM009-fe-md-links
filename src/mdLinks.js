@@ -3,17 +3,15 @@ import { readDir } from './directory-controller.js';
 import { validateArr } from './validate.js';
 
 export const mdLinks = (route, options) => {
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     if (isAbsolute(route)) {
         if(options){
             resolve(validateArr(readDir(route)))
-            .then((res)=>{console.log(res)})
         }else{
         resolve(readDir(route))
         }
     } else {
          resolve((mdLinks(isRelative(route), options)))
-        .then(res=>{console.log(res)})
     }
   })
 }
