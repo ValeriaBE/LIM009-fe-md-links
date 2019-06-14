@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { mdLinks } from "./cli.js";
+
 const path =process.argv[2];
 let option = process.argv[3];
 let options = {};
@@ -14,11 +15,9 @@ const validatingOptions = () => {
     }else{
         mdLinks(path)
         .then((result)=>{
-            console.log(result)
-    })
-}
+            console.log(result);
+        })
+    }
 }
 
 validatingOptions()
-
-
