@@ -35,6 +35,6 @@
     "remove-markdown": "^0.3.0"
   },
   "bin": {
-    "md-links": "./lib/main.js"
+    "md-links": "./lib/bin.js"
   }
 }

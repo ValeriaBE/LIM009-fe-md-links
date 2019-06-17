@@ -15,6 +15,8 @@ import { validateArr } from '../src/validate.js';
 import { mdLinks } from '../src/mdLinks.js';
 import { total, broken, unique, linkStats } from '../src/stats.js';
 
+import { validatingOptions } from '../src/cli.js';
+
 describe('isAbsolute', () => {
   it('Debería ser una funcion', () => {
     expect(typeof (isAbsolute)).toEqual('function')
@@ -143,7 +145,7 @@ describe('mdLinkExtractor', () => {
 })
 
 describe('validateArr', () => {
-  it('Deberia retornar un array resuelto de promesas', () => {
+  it('Deberia retornar un array  de promesas', () => {
     return validateArr(readDir('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
       .then(data => {
         expect(data).toEqual([{
@@ -312,7 +314,7 @@ describe('mdLinks', () => {
       });
   })
   it('Deberia retornar un array con href, text, file, ok, status', () => {
-    return mdLinks('ejemplo',true)
+    return mdLinks('ejemplo', true)
       .then(data => {
         expect(data).toEqual([
           {
@@ -374,7 +376,7 @@ describe('total', () => {
     expect(typeof (total)).toEqual('function')
   });
   it('Debería recibir un array y retornar el number de elementos', () => {
-    expect(total([1,2,3])).toBe(3)
+    expect(total([1, 2, 3])).toBe(3)
   });
 })
 
@@ -438,7 +440,7 @@ describe('linkStats', () => {
       file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
       status: 404,
       ok: 'fail'
-    }], true)).toStrictEqual({"Total": 2, "Broken": 1, "Unique": 2})
+    }], true)).toStrictEqual({ "Total": 2, "Broken": 1, "Unique": 2 })
   });
   it('Debería recibir un array y retornar el total de links,  y unique links', () => {
     expect(linkStats([{
@@ -454,6 +456,77 @@ describe('linkStats', () => {
       file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
       status: 404,
       ok: 'fail'
-    }])).toStrictEqual({"Total": 2, "Unique": 2})
+    }])).toStrictEqual({ "Total": 2, "Unique": 2 })
   });
+})
+
+describe('validatingOptions', () => {
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests')
+      .then((data) => {
+        expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi lol')
+        done()
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('prueba-tests')
+      .then((data) => {
+        expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi lol')
+        done()
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests', '--validate')
+      .then((data) => {
+        expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi OK 200 lol')
+        done();
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('prueba-tests', '--validate')
+      .then((data) => {
+        expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi OK 200 lol')
+        done()
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('prueba-tests', '--stats')
+      .then((data) => {
+        expect(data).toBe(`Total: 1 
+Unique: 1`)
+        done()
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests', '--stats')
+      .then((data) => {
+        expect(data).toBe(`Total: 1 
+Unique: 1`)
+        done()
+      })
+  })
+
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('prueba-tests', '--stats', '--validate')
+      .then((data) => {
+        expect(data).toBe(`Total: 1 
+Broken: 0 
+Unique: 1`)
+        done();
+      })
+  })
+  it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
+    validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests', '--stats', '--validate')
+      .then((data) => {
+        expect(data).toBe(`Total: 1 
+Broken: 0 
+Unique: 1`)
+        done();
+      })
+  })
 })
