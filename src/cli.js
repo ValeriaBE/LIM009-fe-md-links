@@ -28,7 +28,7 @@ Unique: ${linkStats(res, true).Unique}`)
                     console.log(string);
                     return string;
                 })
-        } else if (option === '--stats') {
+        } if (option === '--stats') {
             return mdLinks(path, option)
                 .then(res => {
                     string = (
