@@ -16,6 +16,39 @@ import { mdLinks } from '../src/mdLinks.js';
 import { total, broken, unique, linkStats } from '../src/stats.js';
 
 import { validatingOptions } from '../src/cli.js';
+global.fetch = require('jest-fetch-mock'); 
+
+describe('validateArr', ()=>{
+  beforeEach(() => {
+    fetch.resetMocks()
+  })
+  fetch.mockResponse(JSON.stringify({ testing: true }));
+  it('should call the API',()=>{
+    return validateArr(readDir('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
+      .then(data => {
+        expect(data).toEqual([{
+          href: 'https://github.com/ValeriaBE/LIM009-fe-md-links/tree/master/src',
+          text: 'hola como estas',
+          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+          status: 200,
+          ok: 'OK'
+        },
+        {
+          href: 'https://drive.google.com/file/d/1TUHy3SxgalOWBqH-rtHKbejsKCXoLxWD/view?usp=sharing',
+          text: 'elementos a considerar al escribir tu CV',
+          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+          status: 200,
+          ok: 'OK'
+        }, {
+          href: 'https://flippingbook.com/404',
+          text: 'error',
+          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+          status: 404,
+          ok: 'fail'
+        }]);
+      });
+})
+})
 
 describe('isAbsolute', () => {
   it('Debería ser una funcion', () => {
@@ -144,35 +177,35 @@ describe('mdLinkExtractor', () => {
   });
 })
 
-describe('validateArr', () => {
-  it('Deberia retornar un array  de promesas', (done) => {
-    return validateArr(readDir('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
-      .then(data => {
-        expect(data).toEqual([{
-          href: 'https://github.com/ValeriaBE/LIM009-fe-md-links/tree/master/src',
-          text: 'hola como estas',
-          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
-          status: 200,
-          ok: 'OK'
-        },
-        {
-          href: 'https://drive.google.com/file/d/1TUHy3SxgalOWBqH-rtHKbejsKCXoLxWD/view?usp=sharing',
-          text: 'elementos a considerar al escribir tu CV',
-          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
-          status: 200,
-          ok: 'OK'
-        }, {
-          href: 'https://flippingbook.com/404',
-          text: 'error',
-          file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
-          status: 404,
-          ok: 'fail'
-        }]);
-        done();
-      });
-  })
+// describe('validateArr', () => {
+//   it('Deberia retornar un array  de promesas', (done) => {
+    // return validateArr(readDir('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
+    //   .then(data => {
+    //     expect(data).toEqual([{
+    //       href: 'https://github.com/ValeriaBE/LIM009-fe-md-links/tree/master/src',
+    //       text: 'hola como estas',
+    //       file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+    //       status: 200,
+    //       ok: 'OK'
+    //     },
+    //     {
+    //       href: 'https://drive.google.com/file/d/1TUHy3SxgalOWBqH-rtHKbejsKCXoLxWD/view?usp=sharing',
+    //       text: 'elementos a considerar al escribir tu CV',
+    //       file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+    //       status: 200,
+    //       ok: 'OK'
+    //     }, {
+    //       href: 'https://flippingbook.com/404',
+    //       text: 'error',
+    //       file: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md',
+    //       status: 404,
+    //       ok: 'fail'
+    //     }]);
+    //     done();
+    //   });
+//   })
 
-});
+// });
 describe('mdLinks', () => {
   it('Deberia retornar un array con href, text, file, ok, status', () => {
     return mdLinks('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo', true)
