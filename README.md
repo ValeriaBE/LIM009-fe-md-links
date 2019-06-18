@@ -1,5 +1,9 @@
 # Markdown Links
 
+## Flujograma
+
+![flujograma](https://i.ibb.co/yPNqZRn/Captura-de-Pantalla-2019-06-18-a-la-s-14-17-02.png)
+
 ## Preámbulo
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado

@@ -145,7 +145,7 @@ describe('mdLinkExtractor', () => {
 })
 
 describe('validateArr', () => {
-  it('Deberia retornar un array  de promesas', () => {
+  it('Deberia retornar un array  de promesas', (done) => {
     return validateArr(readDir('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/ejemplo/carpeta-2/README.md'))
       .then(data => {
         expect(data).toEqual([{
@@ -168,6 +168,7 @@ describe('validateArr', () => {
           status: 404,
           ok: 'fail'
         }]);
+        done();
       });
   })
 

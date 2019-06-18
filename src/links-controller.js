@@ -6,7 +6,7 @@ export const mdLinkExtractor = (file) => {
     var renderer = new myMarked.Renderer();
     let links = [];
     renderer.link = (href, title, text) => {
-        links.push({ href, text, file: file })
+        links.push({ href: href, text: text.substring(0,50), file: file })
     };
     myMarked(markdown, { renderer: renderer })
     return links;
