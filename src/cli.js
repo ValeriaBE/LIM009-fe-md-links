@@ -26,7 +26,7 @@ export const validatingOptions = (path, option, validateStats) => {
                     console.log(string);
                     return string;
                 })
-        } if (option === '--stats') {
+        } else if (option === '--stats') {
             return mdLinks(path, option)
                 .then(res => {
                     string = (

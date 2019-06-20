@@ -14,7 +14,7 @@ describe('validatingOptions', () => {
 
 
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
-      validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests')
+      validatingOptions('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests', false)
         .then((data) => {
           expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi lol')
           done()
@@ -22,7 +22,7 @@ describe('validatingOptions', () => {
     })
   
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
-      validatingOptions('prueba-tests')
+      validatingOptions('prueba-tests', false)
         .then((data) => {
           expect(data).toBe('/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wiktionary.org/wiki/hi lol')
           done()
