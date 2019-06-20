@@ -22,9 +22,7 @@ export const validatingOptions = (path, option, validateStats) => {
             return mdLinks(path, option)
                 .then(res => {
                     string = (
-                        `Total: ${linkStats(res, true).Total} 
-Broken: ${linkStats(res, true).Broken} 
-Unique: ${linkStats(res, true).Unique}`)
+                        `Total: ${linkStats(res, true).Total} \n Broken: ${linkStats(res, true).Broken} \n Unique: ${linkStats(res, true).Unique}`)
                     console.log(string);
                     return string;
                 })
@@ -32,8 +30,7 @@ Unique: ${linkStats(res, true).Unique}`)
             return mdLinks(path, option)
                 .then(res => {
                     string = (
-                        `Total: ${linkStats(res, false).Total} 
-Unique: ${linkStats(res, false).Unique}`)
+                        `Total: ${linkStats(res, false).Total} \n Unique: ${linkStats(res, false).Unique}`)
                     console.log(string);
                     return string;
                 })
