@@ -36,7 +36,7 @@ export const validatingOptions = (path, option, validateStats) => {
                 })
         }
     } else {
-        return mdLinks(path, false)
+        return mdLinks(path, {validate:false})
             .then((result) => {
                 let newArr = result.map(element => {
                     string = (`${element.file} ${element.href} ${element.text}`)
