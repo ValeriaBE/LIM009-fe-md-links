@@ -34,16 +34,24 @@ export const validatingOptions = (path, option, validateStats) => {
                     console.log(string);
                     return string;
                 })
-        }
-    } else {
-        return mdLinks(path, false)
-            .then((result) => {
-                let newArr = result.map(element => {
-                    string = (`${element.file} ${element.href} ${element.text}`)
+        }else {
+            return mdLinks(path, options)
+                .then(res => {
+                    string = (
+                        `Total: ${linkStats(res, true).Total} \nBroken: ${linkStats(res, true).Broken} \nUnique: ${linkStats(res, true).Unique}`)
                     console.log(string);
                     return string;
                 })
-                return newArr.toString();
+            }
+} else {
+    return mdLinks(path, options)
+        .then((result) => {
+            let newArr = result.map(element => {
+                string = (`${element.file} ${element.href} ${element.text}`)
+                console.log(string);
+                return string;
             })
+            return newArr.toString();
+        })
     }
 }

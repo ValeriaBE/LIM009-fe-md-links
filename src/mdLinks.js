@@ -2,7 +2,7 @@ import { isAbsolute, isRelative } from './path-controller.js'
 import { readDir } from './directory-controller.js';
 import { validateArr } from './validate.js';
 
-export const mdLinks = (route, options={}) => {
+export const mdLinks = (route, options) => {
   return new Promise((resolve) => {
     if (isAbsolute(route)) {
       if (options.validate) {
