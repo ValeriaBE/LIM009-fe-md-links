@@ -13,7 +13,7 @@ describe('mdLinks', () => {
     .mock('https://flippingbook.com/404', 404)
 
     it('Deberia retornar un array con href, text, file, ok, status', () => {
-      return mdLinks(path.join(process.cwd(), '/ejemplo'), true)
+      return mdLinks(path.join(process.cwd(), '/ejemplo'), {validate:true})
         .then(data => {
           expect(data).toEqual([
             {
@@ -153,57 +153,57 @@ describe('mdLinks', () => {
         });
     })
     it('Deberia retornar un array con href, text, file, ok, status', () => {
-      return mdLinks('ejemplo', true)
+      return mdLinks('ejemplo', {validate:true})
         .then(data => {
           expect(data).toEqual([
             {
+              file: path.join(process.cwd(), '/ejemplo/README.md'),
               href: 'https://code-maven.com/reading-a-file-with-nodejs',
+              status: 200,
+              ok: 'OK',
               text: 'hello estas',
-              file: path.join(process.cwd(), '/ejemplo/README.md'),
-              status: 200,
-              ok: 'OK'
             },
             {
+              file: path.join(process.cwd(), '/ejemplo/README.md'),
               href: 'https://github.com/ValeriaBE/LIM009-fe-md-links/tree/master/src',
-              text: 'curriculum',
-              file: path.join(process.cwd(), '/ejemplo/README.md'),
               status: 200,
-              ok: 'OK'
+              ok: 'OK',
+              text: 'curriculum'
             },
             {
+              file: path.join(process.cwd(), '/ejemplo/carpeta-1/carpeta1-2/README.md'),
               href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce',
-              text: 'valeria',
-              file: path.join(process.cwd(), '/ejemplo/carpeta-1/carpeta1-2/README.md'),
               status: 200,
-              ok: 'OK'
+              ok: 'OK',
+              text: 'valeria'
             },
             {
+              file: path.join(process.cwd(), '/ejemplo/carpeta-1/carpeta1-2/README.md'),
               href: 'https://es.wiktionary.org/wiki/hi',
-              text: 'apellido',
-              file: path.join(process.cwd(), '/ejemplo/carpeta-1/carpeta1-2/README.md'),
               status: 200,
-              ok: 'OK'
+              ok: 'OK',
+              text: 'apellido'
             },
             {
+              file: path.join(process.cwd(), '/ejemplo/carpeta-2/README.md'),
               href: 'https://github.com/ValeriaBE/LIM009-fe-md-links/tree/master/src',
-              text: 'hola como estas',
-              file: path.join(process.cwd(), '/ejemplo/carpeta-2/README.md'),
               status: 200,
-              ok: 'OK'
+              ok: 'OK',
+              text: 'hola como estas'
             },
             {
+              file: path.join(process.cwd(), '/ejemplo/carpeta-2/README.md'),
               href: 'https://drive.google.com/file/d/1TUHy3SxgalOWBqH-rtHKbejsKCXoLxWD/view?usp=sharing',
-              text: 'elementos a considerar al escribir tu CV',
-              file: path.join(process.cwd(), '/ejemplo/carpeta-2/README.md'),
               status: 200,
-              ok: 'OK'
+              ok: 'OK',
+              text: 'elementos a considerar al escribir tu CV'
             },
             {
-              href: 'https://flippingbook.com/404',
-              text: 'error',
               file: path.join(process.cwd(), '/ejemplo/carpeta-2/README.md'),
+              href: 'https://flippingbook.com/404',
               status: 404,
-              ok: 'fail'
+              ok: 'fail',
+              text: 'error'
             }
           ]);
         });
