@@ -13,7 +13,7 @@ export const validateArr = (arr) =>{
             obj.ok ='fail';
             return obj;
            }
-       });
+       })
     })
     return Promise.all(arrPromises)
    }
