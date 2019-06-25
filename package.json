@@ -2,7 +2,7 @@
   "name": "lim009-fe-md-links",
   "version": "1.0.0",
   "description": "## Preámbulo",
-  "main": "index.js",
+  "main": "./lib/mdLinks.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "test": "jest --coverage",
