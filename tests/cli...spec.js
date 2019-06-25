@@ -49,7 +49,7 @@ describe('validatingOptions', () => {
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--stats')
         .then((data) => {
-          expect(data).toBe(`Total: 1 \n Unique: 1`)
+          expect(data).toBe(`Total: 1 \nUnique: 1`)
           done()
         })
     })
@@ -57,7 +57,7 @@ describe('validatingOptions', () => {
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--stats')
         .then((data) => {
-          expect(data).toBe(`Total: 1 \n Unique: 1`)
+          expect(data).toBe(`Total: 1 \nUnique: 1`)
           done()
         })
     })
@@ -65,14 +65,14 @@ describe('validatingOptions', () => {
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--stats', '--validate')
         .then((data) => {
-          expect(data).toBe(`Total: 1 \n Broken: 0 \n Unique: 1`)
+          expect(data).toBe(`Total: 1 \nBroken: 0 \nUnique: 1`)
           done();
         })
     })
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--stats', '--validate')
         .then((data) => {
-          expect(data).toBe(`Total: 1 \n Broken: 0 \n Unique: 1`)
+          expect(data).toBe(`Total: 1 \nBroken: 0 \nUnique: 1`)
           done();
         })
     })
