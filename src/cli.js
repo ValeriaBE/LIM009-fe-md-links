@@ -9,7 +9,7 @@ export const validatingOptions = (path, option, validateStats) => {
     if (option) {
         if (option === '--validate') {
             options.validate = true;
-            return mdLinks(path, option)
+            return mdLinks(path, options)
                 .then((result) => {
                     let newArr = result.map(element => {
                         string = (`${element.file} ${element.href} ${element.ok} ${element.status} ${element.text}`)
@@ -19,7 +19,7 @@ export const validatingOptions = (path, option, validateStats) => {
                     return newArr.toString();
                 })
         } if (option === '--stats' && validateStats === '--validate') {
-            return mdLinks(path, option)
+            return mdLinks(path, options)
                 .then(res => {
                     string = (
                         `Total: ${linkStats(res, true).Total} \nBroken: ${linkStats(res, true).Broken} \nUnique: ${linkStats(res, true).Unique}`)
@@ -27,7 +27,7 @@ export const validatingOptions = (path, option, validateStats) => {
                     return string;
                 })
         } else if (option === '--stats') {
-            return mdLinks(path, option)
+            return mdLinks(path, options)
                 .then(res => {
                     string = (
                         `Total: ${linkStats(res, false).Total} \nUnique: ${linkStats(res, false).Unique}`)

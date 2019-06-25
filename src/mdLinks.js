@@ -5,7 +5,7 @@ import { validateArr } from './validate.js';
 export const mdLinks = (route, options) => {
   return new Promise((resolve) => {
     if (isAbsolute(route)) {
-      if (options) {
+      if (options.validate) {
         resolve(validateArr(readDir(route)))
       } else {
         resolve(readDir(route))
