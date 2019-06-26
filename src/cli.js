@@ -19,6 +19,7 @@ export const validatingOptions = (path, option, validateStats) => {
                     return newArr.toString();
                 })
         } if (option === '--stats' && validateStats === '--validate') {
+            options.validate = true;
             return mdLinks(path, options)
                 .then(res => {
                     string = (
@@ -38,7 +39,7 @@ export const validatingOptions = (path, option, validateStats) => {
             return mdLinks(path, options)
                 .then(res => {
                     string = (
-                        `Total: ${linkStats(res, true).Total} \nBroken: ${linkStats(res, true).Broken} \nUnique: ${linkStats(res, true).Unique}`)
+                        `Total: ${linkStats(res, true).Total} \n \nUnique: ${linkStats(res, true).Unique}`)
                     console.log(string);
                     return string;
                 })

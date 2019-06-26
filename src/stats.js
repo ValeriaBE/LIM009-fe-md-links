@@ -19,8 +19,8 @@ export const total = (arr) => {
 }
 
 export const broken = (arr) => {
-    arr = arr.filter(x=>{
-        return x.ok == 'fail';
+     arr = arr.filter(x=>{
+         return x.ok === 'fail';
     })
     return arr.length
 }
