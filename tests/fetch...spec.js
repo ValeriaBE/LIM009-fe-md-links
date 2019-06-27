@@ -35,20 +35,5 @@ describe('validateArr', () => {
         }]);
       })
   })
-  it('should call the API', () => {
-    validateArr([{
-      href: 'https://es.wtionary.org/wiki/hi',
-      text: 'no',
-      file: path.join(process.cwd(), '/prueba-tests/README.md')
-    }]).catch(data => {
-        expect(data).toEqual([
-          {
-            href: 'https://es.wtionary.org/wiki/hi',
-            text: 'no',
-            file: path.join(process.cwd(), '/prueba-tests/README.md'),
-            status: undefined,
-            ok: 'fail'
-          }]);
-      })
-  })
+
 })
