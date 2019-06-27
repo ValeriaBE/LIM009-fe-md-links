@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1561674616815" clover="3.2.0">
-  <project timestamp="1561674616816" name="All files">
+<coverage generated="1561674784102" clover="3.2.0">
+  <project timestamp="1561674784102" name="All files">
     <metrics statements="96" coveredstatements="96" conditionals="24" coveredconditionals="24" methods="28" coveredmethods="28" elements="148" coveredelements="148" complexity="0" loc="96" ncloc="96" packages="1" files="7" classes="7"/>
     <file name="cli.js" path="/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/src/cli.js">
       <metrics statements="33" coveredstatements="33" conditionals="10" coveredconditionals="10" methods="8" coveredmethods="8"/>

@@ -30,7 +30,7 @@ describe('validateArr', () => {
           href: 'https://es.wtionary.org/wiki/hi',
           text: 'no',
           file: path.join(process.cwd(), '/prueba-tests/README.md'),
-          status: 404,
+          status: undefined,
           ok: 'fail'
         }]);
       })
