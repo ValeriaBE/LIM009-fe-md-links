@@ -13,8 +13,8 @@ export const validateArr = (arr) =>{
             obj.ok ='fail';
             return obj;
            }
-       }).catch((res) => { 
-            obj.status = res.status;
+       }).catch((error) => { 
+            obj.status = '(NO HAY STATUS PORQUE LINK FALLÓ)';
             obj.ok= 'fail' 
             return obj;
      })

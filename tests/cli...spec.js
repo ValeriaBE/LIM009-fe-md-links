@@ -12,7 +12,7 @@ describe('validatingOptions', () => {
     .mock('https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce', 200)
     .mock('https://drive.google.com/file/d/1TUHy3SxgalOWBqH-rtHKbejsKCXoLxWD/view?usp=sharing', 200)
     .mock('https://flippingbook.com/404', 404)
-    .mock('https://es.wtionary.org/wiki/hi', { throws: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wtionary.org/wiki/hi fail undefined no' })
+    .mock('https://es.wtionary.org/wiki/hi', { throws: '/Users/valeriaberrocal/Desktop/LIM009-fe-md-links/prueba-tests/README.md https://es.wtionary.org/wiki/hi fail (NO HAY STATUS PORQUE LINK FALLÓ) no' })
 
 
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
@@ -34,7 +34,7 @@ describe('validatingOptions', () => {
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--validate')
         .then((data) => {
-          expect(data).toBe(`${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wiktionary.org/wiki/hi OK 200 lol,${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wtionary.org/wiki/hi fail undefined no`)
+          expect(data).toBe(`${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wiktionary.org/wiki/hi OK 200 lol,${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wtionary.org/wiki/hi fail (NO HAY STATUS PORQUE LINK FALLÓ) no`)
           done();
         })
     })
@@ -42,7 +42,7 @@ describe('validatingOptions', () => {
     it('Deberia recibir un path absoluto y retornar un un listado con los datos definidos de mdlinks(path)', (done) => {
       validatingOptions(path.join(process.cwd(), '/prueba-tests'), '--validate')
         .then((data) => {
-          expect(data).toBe(`${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wiktionary.org/wiki/hi OK 200 lol,${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wtionary.org/wiki/hi fail undefined no`)
+          expect(data).toBe(`${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wiktionary.org/wiki/hi OK 200 lol,${path.join(process.cwd(),'/prueba-tests/README.md')} https://es.wtionary.org/wiki/hi fail (NO HAY STATUS PORQUE LINK FALLÓ) no`)
           done()
         })
     })
