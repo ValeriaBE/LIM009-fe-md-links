@@ -13,7 +13,11 @@ export const validateArr = (arr) =>{
             obj.ok ='fail';
             return obj;
            }
-       })
+       }).catch((res) => { 
+            obj.status = res.status;
+            obj.ok= 'fail' 
+            return obj;
+     })
     })
     return Promise.all(arrPromises)
    }

@@ -1,1 +1,2 @@
-[lol](https://es.wiktionary.org/wiki/hi).
+[lol](https://es.wiktionary.org/wiki/hi)
+[no](https://es.wtionary.org/wiki/hi).

@@ -3,7 +3,7 @@ import path from 'path';
 import { isMd } from './path-controller.js'
 import { mdLinkExtractor } from "./links-controller.js";
 
-export const isFile = (str) => {
+export const isFile = (str) => {//retorna un bool
     const content = fs.statSync(str);
     return content.isFile();
 }
